@@ -1,0 +1,10 @@
+^C:\USERS\BCECH\DOCUMENTS\OVERWORK\CODE\WEBSITE_STEALTH\BUILD\WINDOWS\CMAKEFILES\B98BCF5218D84C0B8B0F122CF09838A2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/bcech/Documents/OverWork/Code/website_stealth/windows -BC:/Users/bcech/Documents/OverWork/Code/website_stealth/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/bcech/Documents/OverWork/Code/website_stealth/build/windows/website_stealth.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

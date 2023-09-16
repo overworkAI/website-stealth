@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\bcech\Documents\OverWork\Code\website_stealth\build\windows\CMakeFiles\b98bcf5218d84c0b8b0f122cf09838a2\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5C7C40ED-8480-3D9C-9F34-6651AA5DB001}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
