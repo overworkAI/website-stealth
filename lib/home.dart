@@ -158,11 +158,11 @@ class _HomePageState extends State<HomePage> {
                             )),
                             Expanded(
                               child: Container(
-                                color: Color.fromARGB(13, 203, 255, 17), // Background color
+                                color: const Color.fromARGB(13, 203, 255, 17), // Background color
                                 margin: const EdgeInsets.only(right: 8.0),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                       image: AssetImage("assets/ow_logo_stealth_no_bg.png"),
                                       fit: BoxFit.cover,
                                     ),
@@ -222,12 +222,12 @@ void _launchMailto() async {
   if (await canLaunchUrl(mailtoUri)) {
     try {
       await launchUrl(mailtoUri);
-      print('sending email to $mailtoUri');
+      // print('sending email to $mailtoUri');
     } catch (e) {
-      print('Could not launch $mailtoUri');
+      // print('Could not launch $mailtoUri');
     }
   } else {
-    print('Could not launch $mailtoUri');
+    // print('Could not launch $mailtoUri');
   }
 }
 
