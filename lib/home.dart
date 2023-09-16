@@ -80,49 +80,14 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white30,
                     child: Column(
                       children: [
-                        //Spacer(),
-                        // Padding(
-                        //   padding: const EdgeInsets.symmetric(
-                        //     horizontal: 32.0,
-                        //     vertical: 16.0
-                        //   ),
-                        //   child: Row(
-                        //     children: [
-                        //       const Spacer(),
-                        //       OutlinedButton(                                    onPressed: null,
-                        //         child: Padding(
-                        //           padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                        //           child: Text(
-                        //             "Login",
-                        //             style: TextStyle(
-                        //               fontWeight: FontWeight.bold,
-                        //               color: Colors.white,
-                        //             )),
-                        //         ),
-                        //       ),
-                        //       OutlinedButton(                                    onPressed: null,
-                        //         child: const Padding(
-                        //           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                        //           child: Text(
-                        //             "Sign Up",
-                        //             style: TextStyle(
-                        //               fontWeight: FontWeight.bold,
-                        //               color: Colors.white,
-                        //             )),
-                        //         ),
-                        //       ),
-                        //     ]
-                        //   ),
-                        // ),
                         Expanded(child: Row(
                           children: [
                             Expanded(child: Container(
                               margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
-                              child: const Column(
+                              child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  //const Spacer(),
                                   Text(
                                     "Nursing Overtime Shouldn't Be An Assumption.",
                                     style: TextStyle(
@@ -133,12 +98,31 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   SizedBox(height: 16.0),
                                   Text(
-                                    "Don't let overtime burn you out. Get OverWork.",
+                                    "Don't let overtime burn you out.",
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold,
                                     ), 
                                   ),
+                                  // RichText(
+                                  //   text: TextSpan(
+                                  //     style: DefaultTextStyle.of(context).style,
+                                  //     children: <TextSpan>[
+                                  //       TextSpan(text: 'Get ', style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold,)),
+                                  //       TextSpan(text: 'O', style: TextStyle(color: mainGray, fontSize: 20.0, fontWeight: FontWeight.bold,)),
+                                  //       TextSpan(text: 'ver', style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold,)),
+                                  //       TextSpan(text: 'W', style: TextStyle(color: mainGray, fontSize: 20.0, fontWeight: FontWeight.bold,)),
+                                  //       TextSpan(text: 'ork', style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold,)),
+                                  //     ],
+                                  //   ),
+                                  // ),
+                                  Text(
+                                    "Get OverWork.",
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ), 
+                                  ),                                  
                                   SizedBox(height:24.0),
                                   Row(
                                     children: [
@@ -174,11 +158,11 @@ class _HomePageState extends State<HomePage> {
                             )),
                             Expanded(
                               child: Container(
-                                color: Color.fromARGB(13, 203, 255, 17), // Background color
+                                color: const Color.fromARGB(13, 203, 255, 17), // Background color
                                 margin: const EdgeInsets.only(right: 8.0),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                       image: AssetImage("assets/ow_logo_stealth_no_bg.png"),
                                       fit: BoxFit.cover,
                                     ),
@@ -198,15 +182,17 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             children: [
                               IconButton(
-                                onPressed: () {},
+                                onPressed: null,
+                                color: Colors.grey,
                                 icon: const Icon(FontAwesomeIcons.twitter),
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: null,
+                                color: Colors.grey,
                                 icon: const Icon(FontAwesomeIcons.linkedin),
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: _launchGitHub,
                                 icon: const Icon(FontAwesomeIcons.github),
                               ),                            
                             ]
@@ -236,11 +222,24 @@ void _launchMailto() async {
   if (await canLaunchUrl(mailtoUri)) {
     try {
       await launchUrl(mailtoUri);
-      print('sending email to $mailtoUri');
+      // print('sending email to $mailtoUri');
     } catch (e) {
-      print('Could not launch $mailtoUri');
+      // print('Could not launch $mailtoUri');
     }
   } else {
-    print('Could not launch $mailtoUri');
+    // print('Could not launch $mailtoUri');
+  }
+}
+
+void _launchGitHub() async {
+  final Uri url = Uri.parse('https://github.com/overworkAI');
+  if (await canLaunchUrl(url)) {
+    try {
+      await launchUrl(url);
+    } catch (e) {
+      print('Could not launch $url');
+    }
+  } else {
+    print('Could not launch $url');
   }
 }
